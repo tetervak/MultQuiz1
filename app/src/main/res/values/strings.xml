@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Multiplication Quiz 1</string>
+    <string name="enter_answer">Enter your answer</string>
+    <string name="right_answer">Your answer is right</string>
+    <string name="wrong_answer">Your answer is wrong</string>
+    <string name="check_answer">Check</string>
+    <string name="next_problem">Next</string>
+    <string name="sample_problem">3 x 4 =</string>
+    <string name="illegal_input">Illegal Input Value</string>
+</resources>
