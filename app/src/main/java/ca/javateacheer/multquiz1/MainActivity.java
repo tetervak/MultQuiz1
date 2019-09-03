@@ -1,6 +1,6 @@
 package ca.javateacheer.multquiz1;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -9,11 +9,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-  TextView mMessageView;
-  TextView mProblemView;
-  EditText mAnswerEdit;
+  public static final String PROBLEM = "problem";
+  private TextView mMessageView;
+  private TextView mProblemView;
+  private EditText mAnswerEdit;
 
-  MultiplicationProblem mProblem = new MultiplicationProblem();
+  private MultiplicationProblem mProblem;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,14 @@ public class MainActivity extends AppCompatActivity {
     mProblemView = findViewById(R.id.problem);
     mAnswerEdit = findViewById(R.id.answer);
 
-    mProblemView.setText(mProblem.toString());
+    if(savedInstanceState != null){
+      mProblem = (MultiplicationProblem) savedInstanceState.getSerializable(PROBLEM);
+    }else{
+      mProblem = new MultiplicationProblem();
+    }
+
+    assert mProblem != null;
+    mProblemView.setText(mProblem.getText());
   }
 
   public void check(View view) {
@@ -49,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
     mMessageView.setTextColor(getResources().getColor(R.color.Purple500));
     mAnswerEdit.setText("");
     mProblem.reset();
-    mProblemView.setText(mProblem.toString());
+    mProblemView.setText(mProblem.getText());
+  }
+
+  @Override
+  protected void onSaveInstanceState(Bundle outState) {
+    super.onSaveInstanceState(outState);
+    outState.putSerializable(PROBLEM, mProblem);
+
   }
 }

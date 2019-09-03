@@ -1,10 +1,15 @@
 package ca.javateacheer.multquiz1;
 
+import androidx.annotation.NonNull;
+
+import java.io.Serializable;
+
 /**
  * Created by Alex on 2018-02-01.
  */
 
-public class MultiplicationProblem {
+public class MultiplicationProblem implements Serializable {
+
   private int a;
   private int b;
   private int answer;
@@ -37,8 +42,8 @@ public class MultiplicationProblem {
     return answer;
   }
 
-  @Override
-  public String toString(){
+  @NonNull
+  public String getText(){
     return String.format("%s x %s =", a, b);
   }
 
