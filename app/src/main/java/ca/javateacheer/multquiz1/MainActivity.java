@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-  public static final String PROBLEM = "problem";
+  private static final String PROBLEM = "problem";
   private TextView mMessageView;
   private TextView mProblemView;
   private EditText mAnswerEdit;

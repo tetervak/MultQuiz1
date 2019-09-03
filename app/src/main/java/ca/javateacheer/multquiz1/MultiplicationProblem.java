@@ -8,7 +8,7 @@ import java.io.Serializable;
  * Created by Alex on 2018-02-01.
  */
 
-public class MultiplicationProblem implements Serializable {
+class MultiplicationProblem implements Serializable {
 
   private int a;
   private int b;

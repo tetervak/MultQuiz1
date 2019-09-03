@@ -42,7 +42,8 @@
         android:minEms="2"
         android:textAppearance="@android:style/TextAppearance.Material.Display1"
         app:layout_constraintBaseline_toBaselineOf="@+id/problem"
-        app:layout_constraintStart_toEndOf="@+id/problem" />
+        app:layout_constraintStart_toEndOf="@+id/problem"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/check_button"
